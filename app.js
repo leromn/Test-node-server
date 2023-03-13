@@ -3,6 +3,7 @@ const cors= require('cors');
 const app = express();
 app.use(cors());
 app.get('/', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     res.send('Welcome to CORS server 😁')
 })
 
