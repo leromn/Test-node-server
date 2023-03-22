@@ -7,8 +7,6 @@ var path = require('path');
 var mongoose = require('mongoose')
  
 
-
-
 const  MONGO_URI = "mongodb+srv://esru2:Yonn4321@cluster0.sbh1vyc.mongodb.net/?retryWrites=true&w=majority";
 mongoose.connect(MONGO_URI,
     { useNewUrlParser: true, useUnifiedTopology: true })
