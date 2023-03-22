@@ -24,15 +24,10 @@ app.use(bodyParser.json())
 var multer = require('multer');
  
 var storage = multer.diskStorage({
-
     destination: (req, file, cb) => {
-
         cb(null, 'uploads')
-
     },
-
     filename: (req, file, cb) => {
-
         cb(null, file.fieldname + '-' + Date.now())
 
     }
@@ -65,15 +60,10 @@ app.post('/', upload.single('image'), (req, res, next) => {
         }
     }
 
-    imgModel.create(obj, (err, item) => {
-        if (err) {
-            console.log(err);
-        }
-        else {
-            // item.save();
-            res.redirect('/');
-        }
-    });
+    imgModel.create(obj)
+    .then((item) => { res.redirect('/');})
+    .catch(err=>console.log(err))
+    
 });    
 
 
