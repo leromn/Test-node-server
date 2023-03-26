@@ -55,8 +55,8 @@ app.post('/', upload.single('image'), (req, res, next) => {
         name: req.body.name,
         desc: req.body.desc,
         img: {
-            data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
-            contentType: 'image/png'
+            data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.name)),
+            contentType: req.file.type
         }
     }
 
