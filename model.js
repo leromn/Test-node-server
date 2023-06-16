@@ -1,24 +1,18 @@
-var mongoose = require('mongoose');
- 
-// kkk
+var mongoose = require("mongoose");
+
+// kkk2
 var imageSchema = new mongoose.Schema({
+  name: String,
 
-    name: String,
+  desc: String,
 
-    desc: String,
+  img: {
+    data: Buffer,
 
-    img:
-
-    {
-
-        data: Buffer,
-
-        contentType: String
-
-    }
+    contentType: String,
+  },
 });
- 
-//Image is a model which has a schema imageSchema
- 
 
-module.exports = new mongoose.model('Image', imageSchema);
+//Image is a model which has a schema imageSchema
+
+module.exports = new mongoose.model("Image", imageSchema);
